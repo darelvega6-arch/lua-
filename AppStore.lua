@@ -16,6 +16,7 @@ local storeGui = Instance.new("ScreenGui")
 storeGui.Name = "AppStore"
 storeGui.ResetOnSpawn = false
 storeGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+storeGui.IgnoreGuiInset = true
 storeGui.Parent = playerGui
 
 -- Botón para abrir tienda
@@ -37,6 +38,7 @@ storePanel.Position = UDim2.new(0.5, -300, 0.5, -250)
 storePanel.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 storePanel.BorderSizePixel = 0
 storePanel.Visible = false
+storePanel.ZIndex = 10
 storePanel.Parent = storeGui
 
 local storeTitle = Instance.new("TextLabel")

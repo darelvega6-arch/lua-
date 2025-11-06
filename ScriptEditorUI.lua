@@ -9,7 +9,18 @@ local screenGui = Instance.new("ScreenGui")
 screenGui.Name = "ScriptEditor"
 screenGui.ResetOnSpawn = false
 screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+screenGui.IgnoreGuiInset = true
 screenGui.Parent = playerGui
+
+-- Fondo completo que cubre todo
+local background = Instance.new("Frame")
+background.Name = "Background"
+background.Size = UDim2.new(1, 0, 1, 0)
+background.Position = UDim2.new(0, 0, 0, 0)
+background.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+background.BorderSizePixel = 0
+background.ZIndex = 1
+background.Parent = screenGui
 
 -- ========== BARRA SUPERIOR ==========
 local topBar = Instance.new("Frame")
@@ -17,6 +28,7 @@ topBar.Size = UDim2.new(1, 0, 0, 35)
 topBar.Position = UDim2.new(0, 0, 0, 0)
 topBar.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 topBar.BorderSizePixel = 0
+topBar.ZIndex = 2
 topBar.Parent = screenGui
 
 local title = Instance.new("TextLabel")
@@ -63,6 +75,7 @@ explorer.Size = UDim2.new(0, 200, 1, -35)
 explorer.Position = UDim2.new(0, 0, 0, 35)
 explorer.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 explorer.BorderSizePixel = 0
+explorer.ZIndex = 2
 explorer.Parent = screenGui
 
 local explorerTitle = Instance.new("TextLabel")
@@ -89,6 +102,7 @@ codeEditor.Size = UDim2.new(1, -400, 1, -35)
 codeEditor.Position = UDim2.new(0, 200, 0, 35)
 codeEditor.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 codeEditor.BorderSizePixel = 0
+codeEditor.ZIndex = 2
 codeEditor.Parent = screenGui
 
 local editorTitle = Instance.new("Frame")
@@ -141,6 +155,7 @@ properties.Size = UDim2.new(0, 200, 1, -35)
 properties.Position = UDim2.new(1, -200, 0, 35)
 properties.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 properties.BorderSizePixel = 0
+properties.ZIndex = 2
 properties.Parent = screenGui
 
 local propsTitle = Instance.new("TextLabel")
