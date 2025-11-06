@@ -15,9 +15,9 @@ screenGui.Parent = playerGui
 -- ========== BARRA SUPERIOR ==========
 local topBar = Instance.new("Frame")
 topBar.Name = "TopBar"
-topBar.Size = UDim2.new(1, 0, 0, 50)
+topBar.Size = UDim2.new(1, 0, 0, 45)
 topBar.Position = UDim2.new(0, 0, 0, 0)
-topBar.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+topBar.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 topBar.BorderSizePixel = 0
 topBar.Parent = screenGui
 
@@ -42,12 +42,12 @@ toolbar.BorderSizePixel = 0
 toolbar.Parent = screenGui
 
 local toolButtons = {
-	{name = "Select", icon = "🔍", color = Color3.fromRGB(0, 162, 255)},
-	{name = "Move", icon = "✋", color = Color3.fromRGB(0, 255, 127)},
-	{name = "Scale", icon = "📏", color = Color3.fromRGB(255, 170, 0)},
-	{name = "Rotate", icon = "🔄", color = Color3.fromRGB(255, 85, 255)},
-	{name = "Paint", icon = "🎨", color = Color3.fromRGB(255, 0, 127)},
-	{name = "Delete", icon = "🗑️", color = Color3.fromRGB(255, 50, 50)},
+	{name = "Select", icon = "SEL", color = Color3.fromRGB(0, 162, 255)},
+	{name = "Move", icon = "MOV", color = Color3.fromRGB(0, 255, 127)},
+	{name = "Scale", icon = "SCL", color = Color3.fromRGB(255, 170, 0)},
+	{name = "Rotate", icon = "ROT", color = Color3.fromRGB(255, 85, 255)},
+	{name = "Paint", icon = "PNT", color = Color3.fromRGB(255, 0, 127)},
+	{name = "Delete", icon = "DEL", color = Color3.fromRGB(255, 50, 50)},
 }
 
 local selectedTool = "Select"
@@ -55,14 +55,14 @@ local selectedTool = "Select"
 for i, tool in ipairs(toolButtons) do
 	local btn = Instance.new("TextButton")
 	btn.Name = tool.name .. "Btn"
-	btn.Size = UDim2.new(0, 80, 0, 50)
-	btn.Position = UDim2.new(0, 10 + (i-1) * 85, 0, 5)
-	btn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+	btn.Size = UDim2.new(0, 70, 0, 50)
+	btn.Position = UDim2.new(0, 5 + (i-1) * 75, 0, 5)
+	btn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 	btn.BorderSizePixel = 0
-	btn.Text = tool.icon .. "\n" .. tool.name
+	btn.Text = tool.name
 	btn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	btn.TextSize = 12
-	btn.Font = Enum.Font.Gotham
+	btn.TextSize = 14
+	btn.Font = Enum.Font.GothamBold
 	btn.Parent = toolbar
 	
 	local corner = Instance.new("UICorner")
@@ -85,15 +85,13 @@ end
 -- ========== PANEL DE PARTES (Izquierda) ==========
 local partsPanel = Instance.new("Frame")
 partsPanel.Name = "PartsPanel"
-partsPanel.Size = UDim2.new(0, 120, 0, 400)
-partsPanel.Position = UDim2.new(0, 10, 0, 120)
-partsPanel.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+partsPanel.Size = UDim2.new(0, 150, 1, -110)
+partsPanel.Position = UDim2.new(0, 0, 0, 110)
+partsPanel.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
 partsPanel.BorderSizePixel = 0
 partsPanel.Parent = screenGui
 
-local partsPanelCorner = Instance.new("UICorner")
-partsPanelCorner.CornerRadius = UDim.new(0, 10)
-partsPanelCorner.Parent = partsPanel
+
 
 local partsTitle = Instance.new("TextLabel")
 partsTitle.Size = UDim2.new(1, 0, 0, 35)
@@ -105,24 +103,24 @@ partsTitle.Font = Enum.Font.GothamBold
 partsTitle.Parent = partsPanel
 
 local partTypes = {
-	{name = "Block", icon = "⬛"},
-	{name = "Sphere", icon = "⚫"},
-	{name = "Cylinder", icon = "🔵"},
-	{name = "Wedge", icon = "🔺"},
-	{name = "Spawn", icon = "🚩"},
-	{name = "Model", icon = "📦"},
+	{name = "Block"},
+	{name = "Sphere"},
+	{name = "Cylinder"},
+	{name = "Wedge"},
+	{name = "Spawn"},
+	{name = "Model"},
 }
 
 for i, part in ipairs(partTypes) do
 	local partBtn = Instance.new("TextButton")
 	partBtn.Name = part.name .. "Btn"
-	partBtn.Size = UDim2.new(1, -10, 0, 50)
-	partBtn.Position = UDim2.new(0, 5, 0, 40 + (i-1) * 55)
-	partBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-	partBtn.Text = part.icon .. " " .. part.name
+	partBtn.Size = UDim2.new(1, -10, 0, 45)
+	partBtn.Position = UDim2.new(0, 5, 0, 40 + (i-1) * 50)
+	partBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	partBtn.Text = part.name
 	partBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 	partBtn.TextSize = 14
-	partBtn.Font = Enum.Font.Gotham
+	partBtn.Font = Enum.Font.GothamBold
 	partBtn.Parent = partsPanel
 	
 	local corner = Instance.new("UICorner")
@@ -139,15 +137,11 @@ end
 -- ========== EXPLORADOR (Derecha Superior) ==========
 local explorer = Instance.new("Frame")
 explorer.Name = "Explorer"
-explorer.Size = UDim2.new(0, 200, 0, 300)
-explorer.Position = UDim2.new(1, -210, 0, 120)
-explorer.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+explorer.Size = UDim2.new(0, 250, 0.5, -60)
+explorer.Position = UDim2.new(1, -250, 0, 110)
+explorer.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
 explorer.BorderSizePixel = 0
 explorer.Parent = screenGui
-
-local explorerCorner = Instance.new("UICorner")
-explorerCorner.CornerRadius = UDim.new(0, 10)
-explorerCorner.Parent = explorer
 
 local explorerTitle = Instance.new("TextLabel")
 explorerTitle.Size = UDim2.new(1, 0, 0, 35)
@@ -169,15 +163,11 @@ explorerScroll.Parent = explorer
 -- ========== PROPIEDADES (Derecha Inferior) ==========
 local properties = Instance.new("Frame")
 properties.Name = "Properties"
-properties.Size = UDim2.new(0, 200, 0, 250)
-properties.Position = UDim2.new(1, -210, 0, 430)
-properties.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+properties.Size = UDim2.new(0, 250, 0.5, -60)
+properties.Position = UDim2.new(1, -250, 0.5, 5)
+properties.BackgroundColor3 = Color3.fromRGB(37, 37, 37)
 properties.BorderSizePixel = 0
 properties.Parent = screenGui
-
-local propertiesCorner = Instance.new("UICorner")
-propertiesCorner.CornerRadius = UDim.new(0, 10)
-propertiesCorner.Parent = properties
 
 local propertiesTitle = Instance.new("TextLabel")
 propertiesTitle.Size = UDim2.new(1, 0, 0, 35)
@@ -199,16 +189,11 @@ propertiesScroll.Parent = properties
 -- ========== CONTROLES MÓVILES (Inferior) ==========
 local mobileControls = Instance.new("Frame")
 mobileControls.Name = "MobileControls"
-mobileControls.Size = UDim2.new(0, 300, 0, 120)
-mobileControls.Position = UDim2.new(0.5, -150, 1, -130)
-mobileControls.BackgroundColor3 = Color3.fromRGB(46, 46, 46)
+mobileControls.Size = UDim2.new(1, -300, 0, 100)
+mobileControls.Position = UDim2.new(0, 150, 1, -100)
+mobileControls.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
 mobileControls.BorderSizePixel = 0
-mobileControls.BackgroundTransparency = 0.3
 mobileControls.Parent = screenGui
-
-local mobileCorner = Instance.new("UICorner")
-mobileCorner.CornerRadius = UDim.new(0, 15)
-mobileCorner.Parent = mobileControls
 
 -- Joystick de movimiento
 local joystick = Instance.new("Frame")
@@ -236,24 +221,24 @@ knobCorner.Parent = joystickKnob
 
 -- Botones de acción
 local actionButtons = {
-	{name = "Undo", icon = "↶", pos = UDim2.new(0, 120, 0, 10)},
-	{name = "Redo", icon = "↷", pos = UDim2.new(0, 170, 0, 10)},
-	{name = "Copy", icon = "📋", pos = UDim2.new(0, 220, 0, 10)},
-	{name = "Play", icon = "▶️", pos = UDim2.new(0, 120, 0, 60)},
-	{name = "Stop", icon = "⏹️", pos = UDim2.new(0, 170, 0, 60)},
-	{name = "Save", icon = "💾", pos = UDim2.new(0, 220, 0, 60)},
+	{name = "Undo", pos = UDim2.new(0, 10, 0, 10)},
+	{name = "Redo", pos = UDim2.new(0, 90, 0, 10)},
+	{name = "Copy", pos = UDim2.new(0, 170, 0, 10)},
+	{name = "Play", pos = UDim2.new(0, 250, 0, 10)},
+	{name = "Stop", pos = UDim2.new(0, 330, 0, 10)},
+	{name = "Save", pos = UDim2.new(0, 410, 0, 10)},
 }
 
 for _, action in ipairs(actionButtons) do
 	local actionBtn = Instance.new("TextButton")
 	actionBtn.Name = action.name .. "Btn"
-	actionBtn.Size = UDim2.new(0, 40, 0, 40)
+	actionBtn.Size = UDim2.new(0, 70, 0, 80)
 	actionBtn.Position = action.pos
-	actionBtn.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-	actionBtn.Text = action.icon
+	actionBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+	actionBtn.Text = action.name
 	actionBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-	actionBtn.TextSize = 18
-	actionBtn.Font = Enum.Font.Gotham
+	actionBtn.TextSize = 14
+	actionBtn.Font = Enum.Font.GothamBold
 	actionBtn.Parent = mobileControls
 	
 	local corner = Instance.new("UICorner")
@@ -266,21 +251,17 @@ for _, action in ipairs(actionButtons) do
 	end)
 end
 
--- ========== GRID SETTINGS (Botón flotante) ==========
+-- ========== GRID SETTINGS ==========
 local gridBtn = Instance.new("TextButton")
 gridBtn.Name = "GridBtn"
-gridBtn.Size = UDim2.new(0, 60, 0, 60)
-gridBtn.Position = UDim2.new(1, -70, 1, -200)
+gridBtn.Size = UDim2.new(0, 70, 0, 80)
+gridBtn.Position = UDim2.new(0, 500, 1, -90)
 gridBtn.BackgroundColor3 = Color3.fromRGB(0, 162, 255)
-gridBtn.Text = "⊞\nGrid"
+gridBtn.Text = "Grid"
 gridBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 gridBtn.TextSize = 14
 gridBtn.Font = Enum.Font.GothamBold
-gridBtn.Parent = screenGui
-
-local gridCorner = Instance.new("UICorner")
-gridCorner.CornerRadius = UDim.new(1, 0)
-gridCorner.Parent = gridBtn
+gridBtn.Parent = mobileControls
 
 gridBtn.MouseButton1Click:Connect(function()
 	game.ReplicatedStorage.EditorEvent:FireServer("toggleGrid", {})

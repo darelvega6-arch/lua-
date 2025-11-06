@@ -62,7 +62,7 @@ function updateProperties(part)
 			local propFrame = Instance.new("Frame")
 			propFrame.Size = UDim2.new(1, -10, 0, 30)
 			propFrame.Position = UDim2.new(0, 5, 0, (i-1) * 35)
-			propFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+			propFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			propFrame.BorderSizePixel = 0
 			propFrame.Parent = scroll
 			
@@ -117,8 +117,8 @@ local function updateExplorer()
 				local objBtn = Instance.new("TextButton")
 				objBtn.Size = UDim2.new(1, -10, 0, 25)
 				objBtn.Position = UDim2.new(0, 5, 0, (i-1) * 30)
-				objBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-				objBtn.Text = "  📦 " .. obj.Name
+				objBtn.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+				objBtn.Text = "  " .. obj.Name
 				objBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 				objBtn.TextSize = 12
 				objBtn.Font = Enum.Font.Gotham

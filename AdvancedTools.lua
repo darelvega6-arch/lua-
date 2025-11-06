@@ -33,14 +33,14 @@ advTitle.Parent = advancedMenu
 
 -- Herramientas avanzadas
 local advancedTools = {
-	{name = "Terrain", icon = "🏔️", desc = "Editor de terreno"},
-	{name = "Lighting", icon = "💡", desc = "Configurar iluminación"},
-	{name = "Effects", icon = "✨", desc = "Efectos especiales"},
-	{name = "Physics", icon = "⚛️", desc = "Propiedades físicas"},
-	{name = "Constraints", icon = "🔗", desc = "Restricciones"},
-	{name = "Particles", icon = "🎆", desc = "Sistema de partículas"},
-	{name = "Sounds", icon = "🔊", desc = "Audio y sonidos"},
-	{name = "Scripts", icon = "📜", desc = "Editor de scripts"},
+	{name = "Terrain"},
+	{name = "Lighting"},
+	{name = "Effects"},
+	{name = "Physics"},
+	{name = "Constraints"},
+	{name = "Particles"},
+	{name = "Sounds"},
+	{name = "Scripts"},
 }
 
 for i, tool in ipairs(advancedTools) do
@@ -57,7 +57,7 @@ for i, tool in ipairs(advancedTools) do
 	local toolBtn = Instance.new("TextButton")
 	toolBtn.Size = UDim2.new(1, 0, 1, 0)
 	toolBtn.BackgroundTransparency = 1
-	toolBtn.Text = tool.icon .. " " .. tool.name
+	toolBtn.Text = tool.name
 	toolBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 	toolBtn.TextSize = 14
 	toolBtn.Font = Enum.Font.Gotham
@@ -80,7 +80,7 @@ advBtn.Name = "AdvancedBtn"
 advBtn.Size = UDim2.new(0, 60, 0, 60)
 advBtn.Position = UDim2.new(1, -70, 1, -340)
 advBtn.BackgroundColor3 = Color3.fromRGB(127, 0, 255)
-advBtn.Text = "⚙️\nAdv"
+advBtn.Text = "Advanced"
 advBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 advBtn.TextSize = 14
 advBtn.Font = Enum.Font.GothamBold
@@ -112,7 +112,7 @@ settingsCorner.Parent = settingsPanel
 local settingsTitle = Instance.new("TextLabel")
 settingsTitle.Size = UDim2.new(1, 0, 0, 40)
 settingsTitle.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
-settingsTitle.Text = "⚙️ Settings"
+settingsTitle.Text = "Settings"
 settingsTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 settingsTitle.TextSize = 18
 settingsTitle.Font = Enum.Font.GothamBold
@@ -207,7 +207,7 @@ local settingsBtn = Instance.new("TextButton")
 settingsBtn.Size = UDim2.new(0, 40, 0, 40)
 settingsBtn.Position = UDim2.new(1, -50, 0, 5)
 settingsBtn.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-settingsBtn.Text = "⚙️"
+settingsBtn.Text = "SET"
 settingsBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 settingsBtn.TextSize = 20
 settingsBtn.Font = Enum.Font.Gotham
@@ -227,7 +227,7 @@ measureTool.Name = "MeasureBtn"
 measureTool.Size = UDim2.new(0, 60, 0, 60)
 measureTool.Position = UDim2.new(1, -70, 1, -410)
 measureTool.BackgroundColor3 = Color3.fromRGB(255, 200, 0)
-measureTool.Text = "📐\nMeas"
+measureTool.Text = "Measure"
 measureTool.TextColor3 = Color3.fromRGB(255, 255, 255)
 measureTool.TextSize = 14
 measureTool.Font = Enum.Font.GothamBold
@@ -248,7 +248,7 @@ snapBtn.Name = "SnapBtn"
 snapBtn.Size = UDim2.new(0, 60, 0, 60)
 snapBtn.Position = UDim2.new(1, -70, 1, -480)
 snapBtn.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
-snapBtn.Text = "🧲\nSnap"
+snapBtn.Text = "Snap"
 snapBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 snapBtn.TextSize = 14
 snapBtn.Font = Enum.Font.GothamBold

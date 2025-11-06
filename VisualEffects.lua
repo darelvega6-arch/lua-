@@ -151,7 +151,7 @@ indicatorCorner.Parent = toolIndicator
 local indicatorText = Instance.new("TextLabel")
 indicatorText.Size = UDim2.new(1, 0, 1, 0)
 indicatorText.BackgroundTransparency = 1
-indicatorText.Text = "🔍 Select Tool"
+indicatorText.Text = "Select Tool"
 indicatorText.TextColor3 = Color3.fromRGB(255, 255, 255)
 indicatorText.TextSize = 16
 indicatorText.Font = Enum.Font.GothamBold
@@ -159,7 +159,7 @@ indicatorText.Parent = toolIndicator
 
 -- Animación de aparición
 local function showToolIndicator(toolName, icon)
-	indicatorText.Text = icon .. " " .. toolName
+	indicatorText.Text = toolName
 	toolIndicator.BackgroundTransparency = 0.3
 	
 	local tween = TweenService:Create(toolIndicator, TweenInfo.new(2), {

@@ -76,17 +76,20 @@ scroll.CanvasSize = UDim2.new(0, 0, 0, #materials * 40)
 -- Botón para abrir material picker
 local matBtn = Instance.new("TextButton")
 matBtn.Name = "MaterialBtn"
-matBtn.Size = UDim2.new(0, 60, 0, 60)
-matBtn.Position = UDim2.new(1, -70, 1, -270)
+matBtn.Size = UDim2.new(0, 70, 0, 80)
+matBtn.Position = UDim2.new(0, 580, 1, -90)
 matBtn.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
-matBtn.Text = "🎭\nMat"
+matBtn.Text = "Material"
 matBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
 matBtn.TextSize = 14
 matBtn.Font = Enum.Font.GothamBold
-matBtn.Parent = editorUI
+local playerGui = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+local editorUI = playerGui:WaitForChild("EditorStudio")
+local mobileControls = editorUI:WaitForChild("MobileControls")
+matBtn.Parent = mobileControls
 
 local matCorner = Instance.new("UICorner")
-matCorner.CornerRadius = UDim.new(1, 0)
+matCorner.CornerRadius = UDim.new(0, 6)
 matCorner.Parent = matBtn
 
 matBtn.MouseButton1Click:Connect(function()
